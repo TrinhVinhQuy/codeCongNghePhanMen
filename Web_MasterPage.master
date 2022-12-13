@@ -1,0 +1,93 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Web_MasterPage.master.cs" Inherits="Web_MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <link href="web_module/css/style.css" rel="stylesheet" />
+    <script src="web_module/js/script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <header class="header">
+        <a href="#" class="logo"><i class="fas fa-shopping-cart"></i>shop </a>
+
+        <nav class="navbar">
+            <a href="#home">home</a>
+            <a href="#products">products</a>
+            <a href="#featured">featured</a>
+            <a href="#review">review</a>
+            <a href="#contact">contact</a>
+            <a href="#blogs">blogs</a>
+        </nav>
+
+        <div class="icons">
+            <div id="menu-btn" class="fas fa-bars"></div>
+            <div id="search-btn" class="fas fa-search"></div>
+            <a href="#" class="fas fa-shopping-cart"></a>
+            <a href="#" class="fas fa-heart"></a>
+        </div>
+
+        <div action="" class="search-form">
+            <input type="search" name="" placeholder="search here..." id="search-box">
+            <label for="search-box" class="fas fa-search"></label>
+        </div>
+    </header>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div>
+            <section class="footer">
+
+                <div class="box-container">
+
+                    <div class="box">
+                        <h3>about us</h3>
+                        <p>Địa chỉ: 150/8 Nguyễn Duy Cung, Phường 12, TP Hồ Chí Minh, Vietnam</p>
+                        <p>Số điện thoại: 19006750</p>
+                        <p>Email: support@gmail.com</p>
+                    </div>
+
+                    <div class="box">
+                        <h3>Hỗ trợ khách hàng</h3>
+                        <a href="#"><i class="fas fa-arrow-right"></i>Về chúng tôi </a>
+                        <a href="#"><i class="fas fa-arrow-right"></i>Hệ thống cửa hàng </a>
+                        <a href="#"><i class="fas fa-arrow-right"></i>Gọi điện đặt hàng </a>
+                    </div>
+
+                    <div class="box">
+                        <h3>Chính sách</h3>
+                        <a href="#"><i class="fas fa-arrow-right"></i>Chính sách bán hàng </a>
+                        <a href="#"><i class="fas fa-arrow-right"></i>Chính sách đổi trả </a>
+                        <a href="#"><i class="fas fa-arrow-right"></i>Chính sách giao hàng </a>
+                    </div>
+
+                    <div class="box">
+                        <h3>Tổng đài hỗ trợ</h3>
+                        <a href="#"><i class="fas fa-arrow-right"></i>Gọi mua hàng: 19006750 (8h-20h) </a>
+                        <a href="#"><i class="fas fa-arrow-right"></i>Gọi mua hàng: 19006750 (8h-20h) </a>
+                        <a href="#"><i class="fas fa-arrow-right"></i>Gọi mua hàng: 19006750 (8h-20h) </a>
+                    </div>
+
+                </div>
+
+                <div class="share">
+                    <a href="#" class="fab fa-facebook-f"></a>
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-pinterest"></a>
+                    <a href="#" class="fab fa-linkedin"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                </div>
+
+                <div class="credit">&copy; copyright @ 2022 by <span>Trịnh Xuân Vinh Quy</span> </div>
+
+            </section>
+        </div>
+    </form>
+</body>
+</html>
