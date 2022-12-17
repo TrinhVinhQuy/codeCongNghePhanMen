@@ -64,7 +64,7 @@
                                 <div class="content">
                                     <span><%#Eval("slide_title")%></span>
                                     <h3><%#Eval("slide_title1")%></h3>
-                                    <a href="#" class="btn">shop now</a>
+                                    <a href="/Shop-Now" class="btn">shop now</a>
                                 </div>
                             </div>
                         </ItemTemplate>
@@ -89,7 +89,7 @@
                 <div class="content">
                     <span>special offer</span>
                     <h3>upto 50% off</h3>
-                    <a href="#" class="btn">shop now</a>
+                    <a href="/Shop-Now" class="btn">shop now</a>
                 </div>
             </div>
 
@@ -98,7 +98,7 @@
                 <div class="content">
                     <span>special offer</span>
                     <h3>upto 50% off</h3>
-                    <a href="#" class="btn">shop now</a>
+                    <a href="/Shop-Now" class="btn">shop now</a>
                 </div>
             </div>
 
@@ -126,9 +126,7 @@
                         <div class="box" data-item="featured">
                             <div class="icons">
                                 <a href="#" class="fas fa-shopping-cart"></a>
-                                <a href="#" class="fas fa-heart"></a>
-                                <a href="#" class="fas fa-search"></a>
-                                <a href="#" class="fas fa-eye"></a>
+                                
                             </div>
                             <div class="image">
                                 <img src="<%#Eval("product_image") %>" alt="">
@@ -163,14 +161,14 @@
         <section class="deal">
 
             <div class="image">
-                <img src="image/tranding_img.png" alt="">
+                <img src="web_module/image/tranding_img.png" alt="">
             </div>
 
             <div class="content">
                 <span>new season trending!</span>
                 <h3>best summer collection</h3>
                 <p>sale get up to 50% off</p>
-                <a href="#" class="btn">shop now</a>
+                <a href="/Shop-Now" class="btn">shop now</a>
             </div>
 
         </section>
@@ -191,9 +189,7 @@
                             <div class="swiper-slide slide">
                                 <div class="icons">
                                     <a href="#" class="fas fa-shopping-cart"></a>
-                                    <a href="#" class="fas fa-heart"></a>
-                                    <a href="#" class="fas fa-search"></a>
-                                    <a href="#" class="fas fa-eye"></a>
+                                    
                                 </div>
                                 <div class="image">
                                     <img src="<%#Eval("product_image") %>" alt="">
@@ -342,7 +338,7 @@
 
             <div class="row">
 
-                <div class= action="">
+                <div class="" action="">
                     <h3>get in touch</h3>
                     <div class="inputBox">
                         <input type="text" placeholder="your name">
@@ -520,8 +516,13 @@
 
         <!-- custom js file link -->
         <%--<script src="js/script.js"></script>--%>
+        <div style="display: block">
+            <input type="text" id="txtIdPr" name="name" value="" />
+        </div>
     </form>
     <script>
+
+
         let searchForm = document.querySelector('.search-form');
 
         document.querySelector('#search-btn').onclick = () => {

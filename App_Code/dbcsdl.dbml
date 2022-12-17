@@ -298,4 +298,14 @@
       <Column Name="username_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.tbKhachHang" Member="tbKhachHangs">
+    <Type Name="tbKhachHang">
+      <Column Name="kh_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="kh_user" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="kh_pass" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="kh_email" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="kh_fullname" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="kh_sdt" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

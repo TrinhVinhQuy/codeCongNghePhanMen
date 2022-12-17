@@ -19,7 +19,13 @@ public class webui
         List<string> list = new List<string>();
         list.Add("webTrangChu|trang-chu|~/web_module/module_TrangChu.aspx");
         // Introduce
-        
+
+        //Đăng ký
+        list.Add("webDangKy|dang-ky|~/web_module/module_DangKy.aspx");
+        //Đăng Nhập
+        list.Add("webDangNhap|dang-nhap|~/web_module/module_Login.aspx");
+        //Shop Now
+        list.Add("webShopNow|Shop-Now|~/web_module/module_ShopNow.aspx");
         return list;
     }
 }

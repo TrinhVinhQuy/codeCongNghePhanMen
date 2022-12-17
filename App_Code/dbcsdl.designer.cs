@@ -101,6 +101,9 @@ public partial class dbcsdlDataContext : System.Data.Linq.DataContext
   partial void InserttbXuatHang_ChiTiet(tbXuatHang_ChiTiet instance);
   partial void UpdatetbXuatHang_ChiTiet(tbXuatHang_ChiTiet instance);
   partial void DeletetbXuatHang_ChiTiet(tbXuatHang_ChiTiet instance);
+  partial void InserttbKhachHang(tbKhachHang instance);
+  partial void UpdatetbKhachHang(tbKhachHang instance);
+  partial void DeletetbKhachHang(tbKhachHang instance);
   #endregion
 	
 	public dbcsdlDataContext() : 
@@ -322,6 +325,14 @@ public partial class dbcsdlDataContext : System.Data.Linq.DataContext
 		get
 		{
 			return this.GetTable<tbXuatHang_ChiTiet>();
+		}
+	}
+	
+	public System.Data.Linq.Table<tbKhachHang> tbKhachHangs
+	{
+		get
+		{
+			return this.GetTable<tbKhachHang>();
 		}
 	}
 }
@@ -6229,6 +6240,188 @@ public partial class tbXuatHang_ChiTiet : INotifyPropertyChanging, INotifyProper
 				this._username_id = value;
 				this.SendPropertyChanged("username_id");
 				this.Onusername_idChanged();
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbKhachHang")]
+public partial class tbKhachHang : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _kh_id;
+	
+	private string _kh_user;
+	
+	private string _kh_pass;
+	
+	private string _kh_email;
+	
+	private string _kh_fullname;
+	
+	private string _kh_sdt;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onkh_idChanging(int value);
+    partial void Onkh_idChanged();
+    partial void Onkh_userChanging(string value);
+    partial void Onkh_userChanged();
+    partial void Onkh_passChanging(string value);
+    partial void Onkh_passChanged();
+    partial void Onkh_emailChanging(string value);
+    partial void Onkh_emailChanged();
+    partial void Onkh_fullnameChanging(string value);
+    partial void Onkh_fullnameChanged();
+    partial void Onkh_sdtChanging(string value);
+    partial void Onkh_sdtChanged();
+    #endregion
+	
+	public tbKhachHang()
+	{
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_kh_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+	public int kh_id
+	{
+		get
+		{
+			return this._kh_id;
+		}
+		set
+		{
+			if ((this._kh_id != value))
+			{
+				this.Onkh_idChanging(value);
+				this.SendPropertyChanging();
+				this._kh_id = value;
+				this.SendPropertyChanged("kh_id");
+				this.Onkh_idChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_kh_user", DbType="NVarChar(MAX)")]
+	public string kh_user
+	{
+		get
+		{
+			return this._kh_user;
+		}
+		set
+		{
+			if ((this._kh_user != value))
+			{
+				this.Onkh_userChanging(value);
+				this.SendPropertyChanging();
+				this._kh_user = value;
+				this.SendPropertyChanged("kh_user");
+				this.Onkh_userChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_kh_pass", DbType="NVarChar(MAX)")]
+	public string kh_pass
+	{
+		get
+		{
+			return this._kh_pass;
+		}
+		set
+		{
+			if ((this._kh_pass != value))
+			{
+				this.Onkh_passChanging(value);
+				this.SendPropertyChanging();
+				this._kh_pass = value;
+				this.SendPropertyChanged("kh_pass");
+				this.Onkh_passChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_kh_email", DbType="NVarChar(MAX)")]
+	public string kh_email
+	{
+		get
+		{
+			return this._kh_email;
+		}
+		set
+		{
+			if ((this._kh_email != value))
+			{
+				this.Onkh_emailChanging(value);
+				this.SendPropertyChanging();
+				this._kh_email = value;
+				this.SendPropertyChanged("kh_email");
+				this.Onkh_emailChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_kh_fullname", DbType="NVarChar(MAX)")]
+	public string kh_fullname
+	{
+		get
+		{
+			return this._kh_fullname;
+		}
+		set
+		{
+			if ((this._kh_fullname != value))
+			{
+				this.Onkh_fullnameChanging(value);
+				this.SendPropertyChanging();
+				this._kh_fullname = value;
+				this.SendPropertyChanged("kh_fullname");
+				this.Onkh_fullnameChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_kh_sdt", DbType="NVarChar(MAX)")]
+	public string kh_sdt
+	{
+		get
+		{
+			return this._kh_sdt;
+		}
+		set
+		{
+			if ((this._kh_sdt != value))
+			{
+				this.Onkh_sdtChanging(value);
+				this.SendPropertyChanging();
+				this._kh_sdt = value;
+				this.SendPropertyChanged("kh_sdt");
+				this.Onkh_sdtChanged();
 			}
 		}
 	}
