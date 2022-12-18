@@ -26,6 +26,10 @@ public class webui
         list.Add("webDangNhap|dang-nhap|~/web_module/module_Login.aspx");
         //Shop Now
         list.Add("webShopNow|Shop-Now|~/web_module/module_ShopNow.aspx");
+        //Giỏ hàng
+        list.Add("webgiohang|gio-hang|~/web_module/module_GioHang.aspx");
+        //Lịch sữ đơn hàng
+        list.Add("weblichsudonhang|lich-su-don-hang|~/web_module/module_LichSuDonHang.aspx");
         return list;
     }
 }

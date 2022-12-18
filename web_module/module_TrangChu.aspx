@@ -989,7 +989,7 @@
         }
 
             .products .box-container .box {
-                width: 26rem;
+                width: 27rem;
                 border-radius: .5rem;
                 overflow: hidden;
                 position: relative;

@@ -15,7 +15,7 @@ public class cls_Product
         // TODO: Add constructor logic here
         //
     }
-    public bool Linq_Them(string product_title, string product_summary, string image, string product_content, int productcate_id, int product_price)
+    public bool Linq_Them(string product_title, string product_summary, string image, string product_content, int productcate_id, int product_price, int product_promotions)
     {
         tbProduct insert = new tbProduct();
         insert.product_title = product_title;
@@ -24,6 +24,7 @@ public class cls_Product
         insert.product_content = product_content;
         insert.productcate_id = productcate_id;
         insert.product_price = product_price;
+        insert.product_promotions = product_promotions;
         insert.hidden = false;
         //if (SEO_KEYWORD != "")
         //{
@@ -70,7 +71,7 @@ public class cls_Product
             return false;
         }
     }
-    public bool Linq_Sua(int product_id, string product_title, string product_summary, string image, string product_content, int productcate_id, int product_price)
+    public bool Linq_Sua(int product_id, string product_title, string product_summary, string image, string product_content, int productcate_id, int product_price, int product_promotions)
     {
 
         tbProduct update = db.tbProducts.Where(x => x.product_id == product_id).FirstOrDefault();
@@ -80,6 +81,7 @@ public class cls_Product
         update.product_content = product_content;
         update.productcate_id = productcate_id;
         update.product_price = product_price;
+        update.product_promotions = product_promotions;
         //if (SEO_KEYWORD != "")
         //{
         //    update.meta_keywords = SEO_KEYWORD;

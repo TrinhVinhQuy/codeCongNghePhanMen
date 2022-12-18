@@ -16,12 +16,12 @@ public partial class web_module_module_DangKy : System.Web.UI.Page
 
     protected void btnLuu_ServerClick(object sender, EventArgs e)
     {
-        tbKhachHang insert = new tbKhachHang();
-        insert.kh_user = txtUser.Value;
-        insert.kh_email = txtEmail.Value;
-        insert.kh_sdt = txtSDT.Value;
-        insert.kh_pass = txtPass.Value;
-        db.tbKhachHangs.InsertOnSubmit(insert);
+        tbCustomerAccount insert = new tbCustomerAccount();
+        insert.customer_user = txtUser.Value;
+        insert.customer_email = txtEmail.Value;
+        insert.customer_phone = txtSDT.Value;
+        insert.customer_pass = txtPass.Value;
+        db.tbCustomerAccounts.InsertOnSubmit(insert);
         try
         {
             db.SubmitChanges();

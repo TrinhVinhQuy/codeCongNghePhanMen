@@ -95,6 +95,8 @@
                     <dx:GridViewDataColumn Caption="Email" FieldName="customer_email" HeaderStyle-HorizontalAlign="Center" Width="10%"></dx:GridViewDataColumn>
                     <dx:GridViewDataColumn Caption="Địa chỉ" FieldName="customer_address" Settings-AllowEllipsisInText="true" HeaderStyle-HorizontalAlign="Center" Width="15%"></dx:GridViewDataColumn>
                     <dx:GridViewDataColumn Caption="SĐT" FieldName="customer_phone" Settings-AllowEllipsisInText="true" HeaderStyle-HorizontalAlign="Center" Width="15%"></dx:GridViewDataColumn>
+                    <dx:GridViewDataColumn Caption="Tên đăng nhập" FieldName="customer_user" Settings-AllowEllipsisInText="true" HeaderStyle-HorizontalAlign="Center" Width="15%"></dx:GridViewDataColumn>
+                    <dx:GridViewDataColumn Caption="Mật khẩu" FieldName="customer_pass" Settings-AllowEllipsisInText="true" HeaderStyle-HorizontalAlign="Center" Width="15%"></dx:GridViewDataColumn>
                 </Columns>
                 <ClientSideEvents RowDblClick="btnChiTiet" />
                 <SettingsSearchPanel Visible="true" />
@@ -138,6 +140,18 @@
                                             <label class="col-2 form-control-label">Email:</label>
                                             <div class="col-10">
                                                 <asp:TextBox ID="txt_Email" runat="server" ClientIDMode="Static" CssClass="form-control boxed" Width="90%"> </asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 form-group">
+                                            <label class="col-2 form-control-label">Tên đăng nhập:</label>
+                                            <div class="col-10">
+                                                <asp:TextBox ID="txt_user" runat="server" ClientIDMode="Static" CssClass="form-control boxed" Width="90%"> </asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 form-group">
+                                            <label class="col-2 form-control-label">Mật khẩu:</label>
+                                            <div class="col-10">
+                                                <asp:TextBox ID="txt_pass" runat="server" ClientIDMode="Static" CssClass="form-control boxed" Width="90%"> </asp:TextBox>
                                             </div>
                                         </div>
                                     </div>

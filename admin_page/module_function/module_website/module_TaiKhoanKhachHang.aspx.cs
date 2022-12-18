@@ -47,6 +47,8 @@ public partial class admin_page_module_function_module_website_module_TaiKhoanKh
         txt_Phone.Text = "";
         txt_Email.Text = "";
         txt_Address.Text = "";
+        txt_user.Text = "";
+        txt_pass.Text = "";
     }
     protected void btnThem_Click(object sender, EventArgs e)
     {
@@ -75,12 +77,14 @@ public partial class admin_page_module_function_module_website_module_TaiKhoanKh
         txt_Phone.Text = getData.customer_phone;
         txt_Email.Text = getData.customer_email;
         txt_Address.Text = getData.customer_address;
+        txt_user.Text = getData.customer_user;
+        txt_pass.Text = getData.customer_pass;
         ScriptManager.RegisterClientScriptBlock(Page, this.GetType(), "Detail", "popupControl.Show();", true);
     }
 
     protected void btnXoa_Click(object sender, EventArgs e)
     {
-        cls_CustomerAccount cls =new cls_CustomerAccount();
+        cls_CustomerAccount cls = new cls_CustomerAccount();
         List<object> selectedKey = grvList.GetSelectedFieldValues(new string[] { "customer_id" });
         if (selectedKey.Count > 0)
         {
@@ -112,7 +116,7 @@ public partial class admin_page_module_function_module_website_module_TaiKhoanKh
         {
             if (Session["_id"] == null)
             {
-                if (cls.Linq_Them(txt_Name.Text,txt_Phone.Text,txt_Email.Text,txt_Address.Text))
+                if (cls.Linq_Them(txt_Name.Text, txt_Phone.Text, txt_Email.Text, txt_Address.Text, txt_user.Text, txt_pass.Text))
                 {
                     popupControl.ShowOnPageLoad = false;
                     ScriptManager.RegisterClientScriptBlock(this.Page, this.Page.GetType(), "AlertBox", "swal('Thêm thành công!', '','success').then(function(){window.location = '/admin-tai-khoan-khach-hang';})", true);
@@ -121,7 +125,7 @@ public partial class admin_page_module_function_module_website_module_TaiKhoanKh
             }
             else
             {
-                if (cls.Linq_Sua(Convert.ToInt32(Session["_id"].ToString()), txt_Name.Text, txt_Phone.Text, txt_Email.Text, txt_Address.Text))
+                if (cls.Linq_Sua(Convert.ToInt32(Session["_id"].ToString()), txt_Name.Text, txt_Phone.Text, txt_Email.Text, txt_Address.Text, txt_user.Text, txt_pass.Text))
                 {
                     popupControl.ShowOnPageLoad = false;
                     ScriptManager.RegisterClientScriptBlock(this.Page, this.Page.GetType(), "AlertBox", "swal('Cập nhật thành công!', '','success').then(function(){window.location = '/admin-tai-khoan-khach-hang';})", true);

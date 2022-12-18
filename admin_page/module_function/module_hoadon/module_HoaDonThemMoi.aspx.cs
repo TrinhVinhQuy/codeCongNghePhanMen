@@ -297,7 +297,7 @@ public partial class admin_page_module_function_module_hoadon_module_HoaDonThemM
                         insert.hdct_soluong = 1;
                         insert.hdct_price = checkDichVu.dichvu_price;
                         insert.hdct_createdate = DateTime.Now;
-                        insert.username_id = getuser.username_id;
+                        //insert.username_id = getuser.username_id;
                         insert.hidden = false;
                         insert.hdct_giamgia = update.hoadon_giamgia;
                         insert.khuyenmai_id = update.khuyenmai_id;
@@ -369,7 +369,7 @@ public partial class admin_page_module_function_module_hoadon_module_HoaDonThemM
                             insert.hdct_soluong = 1;
                             insert.hdct_price = checkDichVu.dichvu_price;
                             insert.hdct_createdate = DateTime.Now;
-                            insert.username_id = getuser.username_id;
+                            //insert.username_id = getuser.username_id;
                             insert.hidden = false;
                             insert.hdct_giamgia = update.hoadon_giamgia;
                             insert.khuyenmai_id = update.khuyenmai_id;
@@ -652,7 +652,7 @@ public partial class admin_page_module_function_module_hoadon_module_HoaDonThemM
                     insert.hoadon_giamgia = Session["GiamGia"].ToString();
                 }
                 insert.hoadon_createdate = DateTime.Now;
-                insert.username_id = getuser.username_id;
+                //insert.username_id = getuser.username_id;
                 insert.active = true;
                 insert.nhanvien_id = Convert.ToInt32(ddlNhanVien.SelectedValue);
                 db.tbHoaDonBanHangs.InsertOnSubmit(insert);
@@ -672,7 +672,7 @@ public partial class admin_page_module_function_module_hoadon_module_HoaDonThemM
                         ins.hdct_soluong = Convert.ToInt32(row["dichvu_soluong"]);
                         ins.hdct_price = row["dichvu_price"].ToString();
                         ins.hdct_createdate = DateTime.Now;
-                        ins.username_id = insert.username_id;
+                        //ins.username_id = insert.username_id;
                         ins.hidden = false;
                         ins.hdct_giamgia = insert.hoadon_giamgia;
                         ins.khuyenmai_id = insert.khuyenmai_id;
@@ -833,7 +833,7 @@ public partial class admin_page_module_function_module_hoadon_module_HoaDonThemM
                 //load lại hóa đơn
                 loadHoaDonChiTiet(_id);
                 var getHD = from hd in db.tbHoaDonBanHangs
-                            join u in db.admin_Users on hd.username_id equals u.username_id
+                            //join u in db.admin_Users on hd.username_id equals u.username_id
                             where hd.hoadon_id == _id
                             select new
                             {
@@ -842,8 +842,8 @@ public partial class admin_page_module_function_module_hoadon_module_HoaDonThemM
                                 hd.khuyenmai_id,
                                 hd.khachhang_name,
                                 hd.nhanvien_id,
-                                u.username_id,
-                                u.username_fullname
+                                //u.username_id,
+                                //u.username_fullname
                             };
                 txtHoaDon.Value = getHD.FirstOrDefault().hoadon_code;
                 txtKhuyenMaiDaChon.Value = getHD.FirstOrDefault().khuyenmai_id;
@@ -929,7 +929,7 @@ public partial class admin_page_module_function_module_hoadon_module_HoaDonThemM
             ins.khachhang_name = insert.customer_fullname;
             ins.hoadon_createdate = DateTime.Now;
             ins.khachhang_id = insert.customer_id;
-            ins.username_id = getuser.username_id;
+            //ins.username_id = getuser.username_id;
             ins.active = true;
             db.tbHoaDonBanHangs.InsertOnSubmit(ins);
             try
@@ -1004,7 +1004,7 @@ public partial class admin_page_module_function_module_hoadon_module_HoaDonThemM
                 // update lại thông tin ở tbHoaDon
                 tbHoaDonBanHang update = db.tbHoaDonBanHangs.Where(x => x.hoadon_code == txtHoaDon.Value).FirstOrDefault();
                 update.nhanvien_id = Convert.ToInt32(ddlNhanVien.SelectedValue);
-                update.username_id = getuser.username_id;
+                //update.username_id = getuser.username_id;
                 db.SubmitChanges();
                 //xóa hết thông tin ở table tbHoaDonChiTiet và lưu lại mới
                 var getChiTiet = from ct in db.tbHoaDonBanHangChiTiets
@@ -1025,7 +1025,7 @@ public partial class admin_page_module_function_module_hoadon_module_HoaDonThemM
                     ins.hdct_soluong = Convert.ToInt32(row["dichvu_soluong"]);
                     ins.hdct_price = row["dichvu_price"].ToString();
                     ins.hdct_createdate = DateTime.Now;
-                    ins.username_id = getuser.username_id;
+                    //ins.username_id = getuser.username_id;
                     ins.hidden = false;
                     ins.hdct_giamgia = update.hoadon_giamgia;
                     ins.khuyenmai_id = update.khuyenmai_id;

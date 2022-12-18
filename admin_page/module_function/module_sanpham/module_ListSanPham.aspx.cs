@@ -199,7 +199,7 @@ public partial class admin_page_module_function_module_sanpham_module_ListSanPha
             {
                 if (image == null)
                     image = "/admin_images/up-img.png";
-                if (cls.Linq_Them(txt_Tensanpham.Text, txt_Summary.Value, image, edtnoidung.Html, Convert.ToInt32(ddlloaisanpham.Value), Convert.ToInt32(txt_Price.Text)))
+                if (cls.Linq_Them(txt_Tensanpham.Text, txt_Summary.Value, image, edtnoidung.Html, Convert.ToInt32(ddlloaisanpham.Value), Convert.ToInt32(txt_Price.Text), Convert.ToInt32(txt_Promotions.Text)))
                 {
                     popupControl.ShowOnPageLoad = false;
                     ScriptManager.RegisterClientScriptBlock(this.Page, this.Page.GetType(), "AlertBox", "swal('Thêm thành công!', '','success').then(function(){window.location = '/admin-quan-ly-san-pham';})", true);
@@ -210,7 +210,7 @@ public partial class admin_page_module_function_module_sanpham_module_ListSanPha
             {
                 if (image == null)
                     image = txt_Image.Value;
-                if (cls.Linq_Sua(Convert.ToInt32(Session["_id"].ToString()), txt_Tensanpham.Text, txt_Summary.Value, image, edtnoidung.Html, Convert.ToInt32(ddlloaisanpham.Value), Convert.ToInt32(txt_Price.Text)))
+                if (cls.Linq_Sua(Convert.ToInt32(Session["_id"].ToString()), txt_Tensanpham.Text, txt_Summary.Value, image, edtnoidung.Html, Convert.ToInt32(ddlloaisanpham.Value), Convert.ToInt32(txt_Price.Text), Convert.ToInt32(txt_Promotions.Text)))
                 {
                     popupControl.ShowOnPageLoad = false;
                     ScriptManager.RegisterClientScriptBlock(this.Page, this.Page.GetType(), "AlertBox", "swal('Cập nhật thành công!', '','success').then(function(){window.location = '/admin-quan-ly-san-pham';})", true);

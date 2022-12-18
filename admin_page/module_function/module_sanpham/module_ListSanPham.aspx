@@ -150,6 +150,12 @@
                                             <asp:TextBox ID="txt_Price" runat="server" ClientIDMode="Static" CssClass="form-control boxed" Width="90%"> </asp:TextBox>
                                         </div>
                                     </div>
+                                    <div class="col-12 form-group">
+                                        <label class="col-2 form-control-label">Giảm giá:</label>
+                                        <div class="col-10">
+                                            <asp:TextBox ID="txt_Promotions" runat="server" ClientIDMode="Static" CssClass="form-control boxed" Width="90%"> </asp:TextBox>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="col-3">
                                     <div class="col-12">

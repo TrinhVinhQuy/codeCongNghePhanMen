@@ -61,7 +61,7 @@ public partial class admin_page_module_function_module_hoadon_module_DanhSachHoa
         // đẩy id vào session
         Session["_id"] = _id;
         var getData = (from hd in db.tbHoaDonBanHangs
-                       join u in db.admin_Users on hd.username_id equals u.username_id
+                       //join u in db.admin_Users on hd.username_id equals u.username_id
                        where hd.hoadon_id == _id
                        select new
                        {
@@ -71,19 +71,19 @@ public partial class admin_page_module_function_module_hoadon_module_DanhSachHoa
                            hd.hoadon_phaitra,
                            hd.hoadon_giothanhtoan,
                            hd.hoadon_tongtiengiam,
-                           u.username_id,
-                           u.username_fullname
+                           //u.username_id,
+                           //u.username_fullname
                        }).Single();
         txt_KhachHang.Text = getData.khachhang_name;
         txt_Date.Text = getData.hoadon_giothanhtoan.Value.ToString("dd/MM/yyyy").Replace(' ', 'T');
         txt_TongHoaDon.Text = double.Parse(getData.hoadon_tongtien.ToString()).ToString("#,###", cul.NumberFormat);
         txt_PhaiTra.Text = double.Parse(getData.hoadon_phaitra.ToString()).ToString("#,###", cul.NumberFormat);
-        txt_NhanVien.Text = getData.username_fullname;
+        //txt_NhanVien.Text = getData.username_fullname;
         txt_GiamGia.Text = getData.hoadon_tongtiengiam;
         var getHDCT = from hdct in db.tbHoaDonBanHangChiTiets
                       join hd in db.tbHoaDonBanHangs on hdct.hoadon_id equals hd.hoadon_id
                       join dv in db.tbDichVus on hdct.dichvu_id equals dv.dichvu_id
-                      join nv in db.admin_Users on hdct.username_id equals nv.username_id
+                      //join nv in db.admin_Users on hdct.username_id equals nv.username_id
                       where hd.hoadon_id == _id && hdct.hidden == false
                       select new
                       {

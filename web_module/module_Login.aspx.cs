@@ -12,24 +12,24 @@ public partial class web_module_module_Login : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
-            if (Request.Cookies["UserName"] != null)
+            if (Request.Cookies["UserNameWeb"] != null)
             {
-                txtuser.Value = Request.Cookies["UserName"].Value;
+                txtuser.Value = Request.Cookies["UserNameWeb"].Value;
             }
         }
     }
 
     protected void btnLgon_ServerClick(object sender, EventArgs e)
     {
-        var check = from kh in db.tbKhachHangs
-                    where kh.kh_user == txtuser.Value
-                    && kh.kh_pass == txtpass.Value
+        var check = from kh in db.tbCustomerAccounts
+                    where kh.customer_user == txtuser.Value
+                    && kh.customer_pass == txtpass.Value
                     select kh;
         string userName = txtuser.Value.Trim();
         if (check.Count() > 0)
         {
-            tbKhachHang list = check.Single();
-            HttpCookie ck = new HttpCookie("UserName");
+            tbCustomerAccount list = check.Single();
+            HttpCookie ck = new HttpCookie("UserNameWeb");
             string s = ck.Value;
             ck.Value = userName;
             ck.Expires = DateTime.Now.AddDays(365);
