@@ -40,7 +40,7 @@
                     </div>
                     <div class="card-footer">
                         <div class="d-flex justify-content-center links">
-                            Bạn chưa có tài khoản?<a href="../signup/signup.html">Đăng ký</a>
+                            Bạn chưa có tài khoản?<a href="/dang-ky">Đăng ký</a>
                         </div>
                         <%--<div class="d-flex justify-content-center">
                             <a href="../forgot/forgot.html">Forgot your password?</a>

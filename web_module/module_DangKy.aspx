@@ -44,7 +44,7 @@
             <input type="password" class="form-control" id="txtPassNL" placeholder="Nhập lại mật khẩu" />
         </div>
         <a class="btn btn-success" onclick="check()">Đăng kí</a>
-        <a class="btn btn-light" href="../login/login.html">Đăng nhập</a>
+        <a class="btn btn-light" href="/dang-nhap">Đăng nhập</a>
         <div style="display: none">
             <a href="#" runat="server" id="btnLuu" onserverclick="btnLuu_ServerClick"></a>
         </div>

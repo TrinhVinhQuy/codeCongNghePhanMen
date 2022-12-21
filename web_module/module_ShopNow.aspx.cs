@@ -59,7 +59,7 @@ public partial class web_module_module_ShopNow : System.Web.UI.Page
                        select kh).FirstOrDefault().customer_id;
         tbHoaDonBanHang insert = new tbHoaDonBanHang();
         insert.khachhang_id = idkhach;
-        insert.hoadon_tinhtrang = "chưa";
+        insert.hoadon_tinhtrang = "chua";
         db.tbHoaDonBanHangs.InsertOnSubmit(insert);
         db.SubmitChanges();
         string[] arrId = txtId.Value.Split(';');

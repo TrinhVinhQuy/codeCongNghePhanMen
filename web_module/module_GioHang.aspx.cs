@@ -19,7 +19,7 @@ public partial class web_module_module_GioHang : System.Web.UI.Page
                       join hdct in db.tbHoaDonBanHangChiTiets on hd.hoadon_id equals hdct.hoadon_id
                       join pr in db.tbProducts on hdct.product_id equals pr.product_id
                       where hd.khachhang_id == idkhach
-                      && hd.hoadon_tinhtrang == "chưa"
+                      && hd.hoadon_tinhtrang == "chua"
                       select pr;
         var TongTien = string.Join(";", getHang.Select(i => i.product_price));
         int[] arr = TongTien.Split(';').Select(h => Int32.Parse(h)).ToArray();
@@ -32,7 +32,7 @@ public partial class web_module_module_GioHang : System.Web.UI.Page
                          join hdct in db.tbHoaDonBanHangChiTiets on hd.hoadon_id equals hdct.hoadon_id
                          join pr in db.tbProducts on hdct.product_id equals pr.product_id
                          where hd.khachhang_id == idkhach
-                         && hd.hoadon_tinhtrang == "chưa"
+                         && hd.hoadon_tinhtrang == "chua"
                          select new
                          {
                              hd.hoadon_id,
@@ -49,9 +49,9 @@ public partial class web_module_module_GioHang : System.Web.UI.Page
         var update = db.tbHoaDonBanHangs.Where(i => i.hoadon_id == Convert.ToInt32(txtHD.Value)).FirstOrDefault();
         update.hoadon_tinhtrang = "mua";
         update.hoadon_createdate = DateTime.Now;
-        update.hoadon_tongtien = Convert.ToString(Tien);
+        update.hoadon_tongtien = txtTien.Value;
         db.SubmitChanges();
-        Response.Redirect("/gio-hang");
+        Response.Redirect("/trang-chu");
     }
 
     protected void btnHuyMua_ServerClick(object sender, EventArgs e)
@@ -59,7 +59,7 @@ public partial class web_module_module_GioHang : System.Web.UI.Page
         var update = db.tbHoaDonBanHangs.Where(i => i.hoadon_id == Convert.ToInt32(txtHD.Value)).FirstOrDefault();
         update.hoadon_tinhtrang = "huy";
         update.hoadon_createdate = DateTime.Now;
-        update.hoadon_tongtien = Convert.ToString(Tien);
+        update.hoadon_tongtien = txtTien.Value;
         db.SubmitChanges();
         Response.Redirect("/trang-chu");
     }
