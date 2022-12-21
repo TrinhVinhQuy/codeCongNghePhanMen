@@ -8,6 +8,7 @@
     <link href="../css/bootstrap.min.css" rel="stylesheet" />
     <script src="../js/bootstrap.min.js"></script>
     <style>
+        /*l*/
         body {
             background-color: #8FC4B7;
         }
