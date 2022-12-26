@@ -30,8 +30,8 @@
                                     <th scope="col">Ngày</th>
                                     <th scope="col">Tên KH</th>
                                     <th scope="col">Tổng HĐ</th>
-                                    <th scope="col">Giảm giá</th>
-                                    <th scope="col">Phải trả</th>
+                                    <%--<th scope="col">Giảm giá</th>
+                                    <th scope="col">Phải trả</th>--%>
                                 </tr>
                             </thead>
                             <tbody>
@@ -40,7 +40,7 @@
                                         <tr>
                                             <td><%#Container.ItemIndex+1 %></td>
                                             <td>
-                                                <%#Eval("hoadon_giothanhtoan", "{0: dd/MM/yyyy}") %>
+                                                <%#Convert.ToDateTime(Eval("hoadon_createdate")).ToShortDateString()%>
                                             </td>
                                             <td>
                                                 <%#Eval("khachhang_name") %>
@@ -48,12 +48,12 @@
                                             <td>
                                                 <%#Eval("hoadon_tongtien") %>
                                             </td>
-                                            <td>
+                                            <%--<td>
                                                 <%#Eval("hoadon_tongtiengiam") %>
                                             </td>
                                             <td>
                                                 <%#Eval("hoadon_phaitra") %>
-                                            </td>
+                                            </td>--%>
                                         </tr>
                                     </ItemTemplate>
                                 </asp:Repeater>
@@ -62,8 +62,8 @@
                                     <td>Tổng cộng:</td>
                                     <td></td>
                                     <td><%=TongHD%></td>
-                                    <td><%=GiamGia%></td>
-                                    <td><%=ThanhToan%></td>
+                                    <%--<td><%=GiamGia%></td>
+                                    <td><%=ThanhToan%></td>--%>
                                 </tr>
                             </tbody>
                         </table>

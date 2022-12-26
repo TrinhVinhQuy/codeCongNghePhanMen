@@ -39,22 +39,21 @@ public partial class admin_page_module_function_module_thongke_module_ThongKeDoa
         else
         {
             var getDT = from hd in db.tbHoaDonBanHangs
-                        where hd.hoadon_giothanhtoan.Value.Date >= Convert.ToDateTime(txt_TuNgay.Value).Date
-                        && hd.hoadon_giothanhtoan.Value.Date <= Convert.ToDateTime(txt_DenNgay.Value).Date
-                        && hd.hidden==false
+                        where hd.hoadon_createdate.Value.Date >= Convert.ToDateTime(txt_TuNgay.Value).Date
+                        && hd.hoadon_createdate.Value.Date <= Convert.ToDateTime(txt_DenNgay.Value).Date
                         select hd;
             rpDoanhThu.DataSource = getDT;
             rpDoanhThu.DataBind();
-            int tonghd = 0, giamgia = 0, phaitra = 0;
+            int tonghd = 0;
             foreach (var item in getDT)
             {
                 tonghd += Convert.ToInt32(item.hoadon_tongtien);
-                giamgia += Convert.ToInt32(item.hoadon_tongtiengiam);
-                phaitra += Convert.ToInt32(item.hoadon_phaitra);
+                //giamgia += Convert.ToInt32(item.hoadon_tongtiengiam);
+                //phaitra += Convert.ToInt32(item.hoadon_phaitra);
             }
             TongHD = double.Parse(tonghd.ToString()).ToString("#,###", cul.NumberFormat) + " VND";
-            GiamGia = double.Parse(giamgia.ToString()).ToString("#,###", cul.NumberFormat) + " VND";
-            ThanhToan = double.Parse(phaitra.ToString()).ToString("#,###", cul.NumberFormat) + " VND";
+            //GiamGia = double.Parse(giamgia.ToString()).ToString("#,###", cul.NumberFormat) + " VND";
+            //ThanhToan = double.Parse(phaitra.ToString()).ToString("#,###", cul.NumberFormat) + " VND";
             div_DoanhThu.Visible = true;
         }
 

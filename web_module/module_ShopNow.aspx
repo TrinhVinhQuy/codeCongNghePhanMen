@@ -12,7 +12,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     
     <a href="#" onclick="LuuData()" class="btn btnMua">Vào giỏ hàng</a>
-    <section class="products" id="products">
+    <section class="products" id="products_nam">
 
         <h1 class="heading">Đồ Nam </h1>
 
@@ -49,7 +49,7 @@
         </div>
 
     </section>
-    <section class="products" id="products1">
+    <section class="products" id="products_nu">
 
         <h1 class="heading">Đồ Nữ</h1>
 
@@ -85,7 +85,7 @@
         </div>
 
     </section>
-    <section class="products" id="products2">
+    <section class="products" id="products_tre_em">
 
         <h1 class="heading">Đồ Trẻ Em </h1>
 
@@ -138,8 +138,6 @@
             } else {
                 document.getElementById("<%=btnLuu.ClientID%>").click();
             }
-            //
-            //console.log(document.getElementById("<%=txtId.ClientID%>").value)
         }
     </script>
 </asp:Content>

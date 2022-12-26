@@ -30,6 +30,8 @@ public class webui
         list.Add("webgiohang|gio-hang|~/web_module/module_GioHang.aspx");
         //Lịch sữ đơn hàng
         list.Add("weblichsudonhang|lich-su-don-hang|~/web_module/module_LichSuDonHang.aspx");
+        //Chi tiết đơn hàng
+        list.Add("webchitietdonhang|chi-tiet-don-hang-{id}|~/web_module/module_ChiTietDonHang.aspx");
         return list;
     }
 }

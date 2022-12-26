@@ -23,7 +23,7 @@
 
         <header class="header">
 
-            <a href="#" class="logo"><i class="fas fa-shopping-cart"></i>shop </a>
+            <a href="/Shop-Now" class="logo"><i class="fas fa-shopping-cart"></i>shop </a>
 
             <nav class="navbar">
                 <a href="#home">home</a>
@@ -36,15 +36,15 @@
 
             <div class="icons">
                 <div id="menu-btn" class="fas fa-bars"></div>
-                <div id="search-btn" class="fas fa-search"></div>
-                <a href="#" class="fas fa-shopping-cart"></a>
-                <a href="#" class="fas fa-heart"></a>
+                <a id="search-btn" class="fas fa-search"></a>
+                <a href="/gio-hang" class="fas fa-shopping-cart"></a>
+                <%--<a href="#" class="fas fa-heart"></a>--%>
             </div>
 
-            <div action="" class="search-form">
-                <input type="search" name="" placeholder="search here..." id="search-box">
+            <%--<div action="" class="search-form">
+                <input type="search" name="" placeholder="search here..." id="search-box"/>
                 <label for="search-box" class="fas fa-search"></label>
-            </div>
+            </div>--%>
 
         </header>
 
@@ -317,21 +317,22 @@
                 <div class="icons">
                     <i class="fas fa-map-marker-alt"></i>
                     <h3>address</h3>
-                    <p>jogeshwari, mumbai, india - 400104</p>
+                    <p>451 Tôn Đản,Hoà An, Cẩm Lệ, Đà Nẵng</p>
                 </div>
 
                 <div class="icons">
                     <i class="fas fa-envelope"></i>
                     <h3>email</h3>
-                    <p>shaikhanas@gmail.com</p>
-                    <p>anasbhai@gmail.com</p>
+                    <p>vinhquytrinh@gmail.com</p>
+                    <p>nhanle.02092002@gmail.com</p>
+                    <p>tranvanphilong@gmail.com</p>
                 </div>
 
                 <div class="icons">
                     <i class="fas fa-phone"></i>
                     <h3>phone</h3>
-                    <p>+123-456-7890</p>
-                    <p>+111-222-3333</p>
+                    <p>0905163918</p>
+                    <p>0905163918</p>
                 </div>
 
             </div>
@@ -458,56 +459,53 @@
 
         <!-- footer section starts  -->
 
-        <section class="footer">
+        <div>
+            <section class="footer">
 
-            <div class="box-container">
+                <div class="box-container">
 
-                <div class="box">
-                    <h3>about us</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, nesciunt!</p>
+                    <div class="box">
+                        <h3>about us</h3>
+                        <p>Địa chỉ: 451 Tôn Đản,Hoà An, Cẩm Lệ, Đà Nẵng</p>
+                        <p>Số điện thoại: 0905163918</p>
+                        <p>Email: support@gmail.com</p>
+                    </div>
+
+                    <div class="box">
+                        <h3>Hỗ trợ khách hàng</h3>
+                        <a href="#"><i class="fas fa-arrow-right"></i>Về chúng tôi </a>
+                        <a href="#"><i class="fas fa-arrow-right"></i>Hệ thống cửa hàng </a>
+                        <a href="#"><i class="fas fa-arrow-right"></i>Gọi điện đặt hàng </a>
+                    </div>
+
+                    <div class="box">
+                        <h3>Chính sách</h3>
+                        <a href="#"><i class="fas fa-arrow-right"></i>Chính sách bán hàng </a>
+                        <a href="#"><i class="fas fa-arrow-right"></i>Chính sách đổi trả </a>
+                        <a href="#"><i class="fas fa-arrow-right"></i>Chính sách giao hàng </a>
+                    </div>
+
+                    <div class="box">
+                        <h3>Tổng đài hỗ trợ</h3>
+                        <a href="#"><i class="fas fa-arrow-right"></i>Gọi mua hàng: 19006750 (8h-20h) </a>
+                        <a href="#"><i class="fas fa-arrow-right"></i>Gọi mua hàng: 19006750 (8h-20h) </a>
+                        <a href="#"><i class="fas fa-arrow-right"></i>Gọi mua hàng: 19006750 (8h-20h) </a>
+                    </div>
+
                 </div>
 
-                <div class="box">
-                    <h3>category</h3>
-                    <a href="#"><i class="fas fa-arrow-right"></i>men </a>
-                    <a href="#"><i class="fas fa-arrow-right"></i>women </a>
-                    <a href="#"><i class="fas fa-arrow-right"></i>kids </a>
-                    <a href="#"><i class="fas fa-arrow-right"></i>best seller </a>
-                    <a href="#"><i class="fas fa-arrow-right"></i>new arrivals </a>
+                <div class="share">
+                    <a href="#" class="fab fa-facebook-f"></a>
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-pinterest"></a>
+                    <a href="#" class="fab fa-linkedin"></a>
+                    <a href="#" class="fab fa-instagram"></a>
                 </div>
 
-                <div class="box">
-                    <h3>quick links</h3>
-                    <a href="#"><i class="fas fa-arrow-right"></i>home </a>
-                    <a href="#"><i class="fas fa-arrow-right"></i>products </a>
-                    <a href="#"><i class="fas fa-arrow-right"></i>featured </a>
-                    <a href="#"><i class="fas fa-arrow-right"></i>review </a>
-                    <a href="#"><i class="fas fa-arrow-right"></i>contact </a>
-                    <a href="#"><i class="fas fa-arrow-right"></i>blogs </a>
-                </div>
+                <div class="credit">&copy; copyright @ 2022 by <span>Trịnh Xuân Vinh Quy</span> </div>
 
-                <div class="box">
-                    <h3>extra links</h3>
-                    <a href="#"><i class="fas fa-arrow-right"></i>my order </a>
-                    <a href="#"><i class="fas fa-arrow-right"></i>my account </a>
-                    <a href="#"><i class="fas fa-arrow-right"></i>my listing </a>
-                    <a href="#"><i class="fas fa-arrow-right"></i>sell now </a>
-                    <a href="#"><i class="fas fa-arrow-right"></i>new offers </a>
-                </div>
-
-            </div>
-
-            <div class="share">
-                <a href="#" class="fab fa-facebook-f"></a>
-                <a href="#" class="fab fa-twitter"></a>
-                <a href="#" class="fab fa-pinterest"></a>
-                <a href="#" class="fab fa-linkedin"></a>
-                <a href="#" class="fab fa-instagram"></a>
-            </div>
-
-            <div class="credit">&copy; copyright @ 2022 by <span>Trịnh Xuân Vinh Quy</span> </div>
-
-        </section>
+            </section>
+        </div>
 
         <!-- footer section ends -->
 

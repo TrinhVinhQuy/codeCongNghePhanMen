@@ -1,30 +1,39 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Web_MasterPage.master" AutoEventWireup="true" CodeFile="module_LichSuDonHang.aspx.cs" Inherits="web_module_module_LichSuDonHang" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        table{
+            font-size: 30px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <div class="box-container">
+    <br />
+    <div class="container">
         <h3>Lịch sử mua</h3>
-        <table>
+        <table class="table">
             <tr>
-                <th>Ngày mua</th>
+                <th>Ngày</th>
                 <th>Thành Tiền</th>
+                <th>Tình trạng</th>
                 <th>Chi Tiết</th>
             </tr>
             <asp:Repeater runat="server" ID="rpMua">
                 <ItemTemplate>
                     <tr>
-                        <th><%#Convert.ToDateTime(Eval("hoadon_createdate")).ToShortDateString() %></th>
-                        <th><%#Eval("hoadon_tongtien") %></th>
-                        <th><a href="#">Chi Tiết</a></th>
+                        <td><%#Convert.ToDateTime(Eval("hoadon_createdate")).ToShortDateString() %></td>
+                        <td><%#Eval("hoadon_tongtien") %></td>
+                        <td><%#Eval("hoadon_tinhtrang") %></td>
+                        <td><a href="chi-tiet-don-hang-<%#Eval("hoadon_id") %>">Chi Tiết</a></td>
                     </tr>
                 </ItemTemplate>
             </asp:Repeater>
         </table>
     </div>
-    <div class="box-container">
+    <%--<div class="container">
         <h3>Lịch sử huỷ</h3>
-        <table>
+        <table class="table">
             <tr>
                 <th>Ngày mua</th>
                 <th>Thành Tiền</th>
@@ -33,13 +42,14 @@
             <asp:Repeater runat="server" ID="rpHuy">
                 <ItemTemplate>
                     <tr>
-                        <th><%#Convert.ToDateTime(Eval("hoadon_createdate")).ToShortDateString() %></th>
-                        <th><%#Eval("hoadon_tongtien") %></th>
-                        <th><a href="#">Chi Tiết</a></th>
+                        <td><%#Convert.ToDateTime(Eval("hoadon_createdate")).ToShortDateString() %></td>
+                        <td><%#Eval("hoadon_tongtien") %></td>
+                        <td><a href="#">Chi Tiết</a></td>
                     </tr>
                 </ItemTemplate>
             </asp:Repeater>
         </table>
-    </div>
+    </div>--%>
+    <br />
 </asp:Content>
 

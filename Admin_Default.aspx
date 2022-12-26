@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="headlink" runat="Server">
     <style>
-        #doanhthuhomnay {
+        #doanhthuhomnay h3 {
             text-align: center;
         }
     </style>
@@ -21,49 +21,45 @@
             <asp:UpdatePanel runat="server">
                 <ContentTemplate>
                     <div runat="server" id="div_doanhthuhomnay">
-                        <table class="table table-striped mt-1">
-                            <thead>
-                                <tr>
-                                    <th style="width: 50px;">#</th>
-                                    <th scope="col">Ngày</th>
-                                    <th scope="col">Tên KH</th>
-                                    <th scope="col">Tổng HĐ</th>
-                                    <th scope="col">Giảm giá</th>
-                                    <th scope="col">Phải trả</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <asp:Repeater runat="server" ID="rpHoaDonHomNay">
-                                    <ItemTemplate>
-                                        <tr>
-                                            <td><%#Container.ItemIndex+1 %></td>
-                                            <td>
-                                                <%#Eval("hoadon_giothanhtoan", "{0: dd/MM/yyyy}") %>
-                                            </td>
-                                            <td>
-                                                <%#Eval("khachhang_name") %>
-                                            </td>
-                                            <td>
-                                                <%#Eval("hoadon_tongtien") %>
-                                            </td>
-                                            <td>
-                                                <%#Eval("hoadon_tongtiengiam") %>
-                                            </td>
-                                            <td>
-                                                <%#Eval("hoadon_phaitra") %>
-                                            </td>
-                                        </tr>
-                                    </ItemTemplate>
-                                </asp:Repeater>
-                                <tr style="font-weight: 600">
+                        <table class="table">
+                            <tr>
+                                <th style="width: 50px;">#</th>
+                                <th>Ngày</th>
+                                <th>Tên KH</th>
+                                <th>Tổng HĐ</th>
+                                <%--<th>Giảm giá</th>
+                                <th>Phải trả</th>--%>
+                            </tr>
+                            <asp:Repeater runat="server" ID="rpHoaDonHomNay">
+                                <ItemTemplate>
+                                    <tr>
+                                        <td><%#Container.ItemIndex+1 %></td>
+                                        <td>
+                                            <%#Convert.ToDateTime(Eval("hoadon_createdate")).ToShortDateString()%>
+                                        </td>
+                                        <td>
+                                            <%#Eval("khachhang_name") %>
+                                        </td>
+                                        <td>
+                                            <%#Eval("hoadon_tongtien") %>
+                                        </td>
+                                        <%--<td>
+                                            <%#Eval("hoadon_tongtiengiam") %>
+                                        </td>
+                                        <td>
+                                            <%#Eval("hoadon_phaitra") %>
+                                        </td>--%>
+                                    </tr>
+                                </ItemTemplate>
+                            </asp:Repeater>
+                            <tr style="font-weight: 600">
                                     <td></td>
                                     <td>Tổng cộng:</td>
                                     <td></td>
                                     <td><%=TongTien%></td>
-                                    <td><%=TongTienGiam%></td>
-                                    <td><%=PhaiTra%></td>
+                                    <%--<td><%=TongTienGiam%></td>
+                                    <td><%=PhaiTra%></td>--%>
                                 </tr>
-                            </tbody>
                         </table>
                     </div>
                 </ContentTemplate>

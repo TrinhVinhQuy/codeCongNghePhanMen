@@ -10,34 +10,38 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <script src="js/bootstrap.min.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
         <header class="header">
-            <a href="#" class="logo"><i class="fas fa-shopping-cart"></i>shop </a>
+            <a href="/Shop-Now" class="logo"><i class="fas fa-shopping-cart"></i>shop </a>
 
             <nav class="navbar">
                 <a href="trang-chu#home">home</a>
-                <a href="trang-chu#products">products</a>
-                <a href="trang-chu#featured">featured</a>
-                <a href="trang-chu#review">review</a>
-                <a href="trang-chu#contact">contact</a>
-                <a href="trang-chu#blogs">blogs</a>
+                <a href="#products_nam">Nam</a>
+                <a href="#products_nu">Nữ</a>
+                <a href="#products_tre_em">Trẻ em</a>
+                <a href="/lich-su-don-hang">Lịch sử đơn hàng</a>
             </nav>
 
             <div class="icons">
                 <div id="menu-btn" class="fas fa-bars"></div>
-                <div id="search-btn" class="fas fa-search"></div>
-                <a href="#" class="fas fa-shopping-cart"></a>
-                <a href="#" class="fas fa-heart"></a>
+                <%--<div id="search-btn" class="fas fa-search"></div>--%>
+                <a href="/gio-hang" class="fas fa-shopping-cart"></a>
+                <%--<a href="#" class="fas fa-heart"></a>--%>
+                <label><a href="#" runat="server" id="btnLogOut" onserverclick="btnLogOut_ServerClick">LogOut</a></label>
             </div>
 
             <div action="" class="search-form">
-                <input type="search" name="" placeholder="search here..." id="search-box">
+                <input type="search" name="" placeholder="search here..." id="search-box" />
                 <label for="search-box" class="fas fa-search"></label>
             </div>
+            
+
         </header>
         <br />
         <br />

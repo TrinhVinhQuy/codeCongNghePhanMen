@@ -21,12 +21,21 @@ public partial class web_module_module_GioHang : System.Web.UI.Page
                       where hd.khachhang_id == idkhach
                       && hd.hoadon_tinhtrang == "chua"
                       select pr;
-        var TongTien = string.Join(";", getHang.Select(i => i.product_price));
-        int[] arr = TongTien.Split(';').Select(h => Int32.Parse(h)).ToArray();
-        int Tien = 0;
-        for (int i = 0; i < arr.Length; i++)
+        if (getHang.Count() > 0)
         {
-            Tien = Tien + arr[i];
+            var TongTien = string.Join(";", getHang.Select(i => i.product_price));
+            int[] arr = TongTien.Split(';').Select(h => Int32.Parse(h)).ToArray();
+            int Tien = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Tien = Tien + arr[i];
+            }
+            txtTien.Value = Convert.ToString(Tien);
+        }
+        else
+        {
+            btnMua.Visible = false;
+            btnHuyMua.Visible = false;
         }
         var getGioHang = from hd in db.tbHoaDonBanHangs
                          join hdct in db.tbHoaDonBanHangChiTiets on hd.hoadon_id equals hdct.hoadon_id
@@ -36,11 +45,15 @@ public partial class web_module_module_GioHang : System.Web.UI.Page
                          select new
                          {
                              hd.hoadon_id,
-                             pr.product_image
+                             pr.product_image,
+                             pr.product_price,
+                             pr.product_price_new,
+                             pr.product_promotions,
+                             pr.product_title,
                          };
         rpGioHang.DataSource = getGioHang;
         rpGioHang.DataBind();
-        txtTien.Value = Convert.ToString(Tien);
+        
     }
 
     protected void btnMua_ServerClick(object sender, EventArgs e)

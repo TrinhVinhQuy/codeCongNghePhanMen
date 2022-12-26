@@ -94,6 +94,9 @@
                             <img src="<%#Eval("slide_image") %>" height="100" />
                         </DataItemTemplate>
                     </dx:GridViewDataColumn>
+                    <dx:GridViewDataColumn Caption="Tên title" FieldName="slide_title" HeaderStyle-HorizontalAlign="Center" Width="20%"></dx:GridViewDataColumn>
+                    <dx:GridViewDataColumn Caption="Tên title" FieldName="slide_title1" HeaderStyle-HorizontalAlign="Center" Width="20%"></dx:GridViewDataColumn>
+                    
                 </Columns>
                 <ClientSideEvents RowDblClick="btnChiTiet" />
                 <SettingsSearchPanel Visible="true" />
@@ -126,6 +129,18 @@
                                                 <button type="button" class="btn-chang" onclick="clickavatar1()">
                                                     <img id="imgPreview1" src="/admin_images/up-img.png" style="max-width: 100%; height: auto" />
                                                 </button>
+                                            </div>
+                                        </div>
+                                        <div class="text-color1">
+                                            <label class="col-2 form-control-label">Tên title</label>
+                                            <div class="col-10">
+                                                <asp:TextBox ID="txt_title" runat="server" ClientIDMode="Static" CssClass="form-control boxed" Width="90%"> </asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <div class="text-color1">
+                                            <label class="col-2 form-control-label">Tên title1</label>
+                                            <div class="col-10">
+                                                <asp:TextBox ID="txt_title1" runat="server" ClientIDMode="Static" CssClass="form-control boxed" Width="90%"> </asp:TextBox>
                                             </div>
                                         </div>
                                         <input hidden="hidden" type="text" value="" runat="server" id="txt_Image" />

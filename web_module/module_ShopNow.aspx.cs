@@ -57,22 +57,41 @@ public partial class web_module_module_ShopNow : System.Web.UI.Page
         var idkhach = (from kh in db.tbCustomerAccounts
                        where kh.customer_user == Request.Cookies["UserNameWeb"].Value
                        select kh).FirstOrDefault().customer_id;
-        tbHoaDonBanHang insert = new tbHoaDonBanHang();
-        insert.khachhang_id = idkhach;
-        insert.hoadon_tinhtrang = "chua";
-        db.tbHoaDonBanHangs.InsertOnSubmit(insert);
-        db.SubmitChanges();
+        var getDonHang = (from hd in db.tbHoaDonBanHangs
+                          where hd.khachhang_id == idkhach
+                          && hd.hoadon_tinhtrang == "chua"
+                          select hd);
         string[] arrId = txtId.Value.Split(';');
-        var temp = (from hd in db.tbHoaDonBanHangs
-                    orderby hd.hoadon_id descending
-                    select hd).FirstOrDefault().hoadon_id;
-        for (int i = 0; i < arrId.Length; i++)
+        if (getDonHang.Count() > 0)
         {
-            tbHoaDonBanHangChiTiet insertHD = new tbHoaDonBanHangChiTiet();
-            insertHD.hoadon_id = temp;
-            insertHD.product_id = Convert.ToInt32(arrId[i]);
-            db.tbHoaDonBanHangChiTiets.InsertOnSubmit(insertHD);
+            for (int i = 0; i < arrId.Length; i++)
+            {
+                tbHoaDonBanHangChiTiet insertHD = new tbHoaDonBanHangChiTiet();
+                insertHD.hoadon_id = getDonHang.FirstOrDefault().hoadon_id;
+                insertHD.product_id = Convert.ToInt32(arrId[i]);
+                db.tbHoaDonBanHangChiTiets.InsertOnSubmit(insertHD);
+                db.SubmitChanges();
+            }
+        }
+        else
+        {
+            tbHoaDonBanHang insert = new tbHoaDonBanHang();
+            insert.khachhang_id = idkhach;
+            insert.hoadon_tinhtrang = "chua";
+            db.tbHoaDonBanHangs.InsertOnSubmit(insert);
             db.SubmitChanges();
+
+            var temp = (from hd in db.tbHoaDonBanHangs
+                        orderby hd.hoadon_id descending
+                        select hd).FirstOrDefault().hoadon_id;
+            for (int i = 0; i < arrId.Length; i++)
+            {
+                tbHoaDonBanHangChiTiet insertHD = new tbHoaDonBanHangChiTiet();
+                insertHD.hoadon_id = temp;
+                insertHD.product_id = Convert.ToInt32(arrId[i]);
+                db.tbHoaDonBanHangChiTiets.InsertOnSubmit(insertHD);
+                db.SubmitChanges();
+            }
         }
         Response.Redirect("/gio-hang");
     }

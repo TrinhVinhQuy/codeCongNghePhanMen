@@ -35,7 +35,7 @@ public partial class admin_page_module_function_module_Slide : System.Web.UI.Pag
     private void loadData()
     {
         var getData = from tb in db.tbSlides
-                      where tb.hidden == false
+                      where tb.hidden == null
                       select tb;
         grvList.DataSource = getData;
         grvList.DataBind();
@@ -123,11 +123,11 @@ public partial class admin_page_module_function_module_Slide : System.Web.UI.Pag
                 Directory.CreateDirectory(folderUser);
             }
             //string filename;
-            string ulr = "/uploadimages/anh_slide/";
+            string ulr = "/web_module/image/";
             HttpFileCollection hfc = Request.Files;
             //string filename = Path.GetRandomFileName() + Path.GetExtension(FileUpload1.FileName);
             string filename = DateTime.Now.ToString("ddMMyyyy_hhmmss_tt_") + FileUpload1.FileName;
-            string fileName_save = Path.Combine(Server.MapPath("~/uploadimages/anh_slide"), filename);
+            string fileName_save = Path.Combine(Server.MapPath("~/web_module/image"), filename);
             FileUpload1.SaveAs(fileName_save);
             image = ulr + filename;
         }
@@ -135,7 +135,7 @@ public partial class admin_page_module_function_module_Slide : System.Web.UI.Pag
         {
             if (image == null)
                 image = "/admin_images/up-img.png";
-            if (cls.Linq_Them(image))
+            if (cls.Linq_Them(image, txt_title.Text, txt_title1.Text))
             {
                 popupControl.ShowOnPageLoad = false;
                 ScriptManager.RegisterClientScriptBlock(this.Page, this.Page.GetType(), "AlertBox", "swal('Thêm thành công!', '','success').then(function(){window.location = '/admin-slide';})", true);
@@ -146,7 +146,7 @@ public partial class admin_page_module_function_module_Slide : System.Web.UI.Pag
         {
             if (image == null)
                 image = txt_Image.Value;
-            if (cls.Linq_Sua(Convert.ToInt32(Session["_id"].ToString()), image))
+            if (cls.Linq_Sua(Convert.ToInt32(Session["_id"].ToString()), image, txt_title.Text, txt_title1.Text))
             {
                 popupControl.ShowOnPageLoad = false;
                 ScriptManager.RegisterClientScriptBlock(this.Page, this.Page.GetType(), "AlertBox", "swal('Cập nhật thành công!', '','success').then(function(){window.location = '/admin-slide';})", true);
