@@ -4730,6 +4730,8 @@ public partial class tbProduct : INotifyPropertyChanging, INotifyPropertyChanged
 	
 	private System.Nullable<bool> _hidden;
 	
+	private System.Nullable<int> _product_soluong;
+	
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -4786,6 +4788,8 @@ public partial class tbProduct : INotifyPropertyChanging, INotifyPropertyChanged
     partial void Onproduct_price_entryChanged();
     partial void OnhiddenChanging(System.Nullable<bool> value);
     partial void OnhiddenChanged();
+    partial void Onproduct_soluongChanging(System.Nullable<int> value);
+    partial void Onproduct_soluongChanged();
     #endregion
 	
 	public tbProduct()
@@ -5309,6 +5313,26 @@ public partial class tbProduct : INotifyPropertyChanging, INotifyPropertyChanged
 				this._hidden = value;
 				this.SendPropertyChanged("hidden");
 				this.OnhiddenChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_product_soluong", DbType="Int")]
+	public System.Nullable<int> product_soluong
+	{
+		get
+		{
+			return this._product_soluong;
+		}
+		set
+		{
+			if ((this._product_soluong != value))
+			{
+				this.Onproduct_soluongChanging(value);
+				this.SendPropertyChanging();
+				this._product_soluong = value;
+				this.SendPropertyChanged("product_soluong");
+				this.Onproduct_soluongChanged();
 			}
 		}
 	}

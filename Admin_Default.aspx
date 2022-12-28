@@ -27,6 +27,7 @@
                                 <th>Ngày</th>
                                 <th>Tên KH</th>
                                 <th>Tổng HĐ</th>
+                                <th>Chi Tiết</th>
                                 <%--<th>Giảm giá</th>
                                 <th>Phải trả</th>--%>
                             </tr>
@@ -42,6 +43,9 @@
                                         </td>
                                         <td>
                                             <%#Eval("hoadon_tongtien") %>
+                                        </td>
+                                        <td>
+                                            <a href="/admin-chi-tiet-hoa-don-<%#Eval("hoadon_id") %>" class="btn btn-primary">Chi Tết</a>
                                         </td>
                                         <%--<td>
                                             <%#Eval("hoadon_tongtiengiam") %>

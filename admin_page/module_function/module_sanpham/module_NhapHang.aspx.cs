@@ -9,6 +9,7 @@ using System.Web.UI.WebControls;
 public partial class admin_page_module_function_module_NhapHang : System.Web.UI.Page
 {
     dbcsdlDataContext db = new dbcsdlDataContext();
+    cls_Alert alert = new cls_Alert();
     private int stt = 1;
     private int _id;
     protected void Page_Load(object sender, EventArgs e)
@@ -17,24 +18,42 @@ public partial class admin_page_module_function_module_NhapHang : System.Web.UI.
     }
     private void loaddata()
     {
-        Session["spChiTiet"] = null;
-        var getdata = from nh in db.tbNhapHangs
-                      join u in db.admin_Users on nh.username_id equals u.username_id
-                      orderby nh.nhaphang_code descending
-                      select new { 
-                       nh.nhaphang_code,
-                       nh.nhaphang_content,
-                       nh.nhaphang_id,
-                       u.username_fullname,
-                       nh.nhaphang_createdate
-                      };
-        grvList.DataSource = getdata;
-        grvList.DataBind();
+        var getSanPham = from hd in db.tbHoaDonBanHangs
+                         join hdct in db.tbHoaDonBanHangChiTiets on hd.hoadon_id equals hdct.hoadon_id
+                         join pr in db.tbProducts on hdct.product_id equals pr.product_id
+                         select new
+                         {
+                             hd.hoadon_id,
+                             pr.product_id,
+                             pr.product_title,
+                             pr.product_image,
+                             pr.product_soluong,
+                             pr.product_price,
+                             pr.product_promotions
+                         };
+        rpNhapHang.DataSource = getSanPham;
+        rpNhapHang.DataBind();
     }
 
-    protected void btnChiTiet_Click(object sender, EventArgs e)
+
+
+    protected void btnluu_ServerClick(object sender, EventArgs e)
     {
-        _id = Convert.ToInt32(grvList.GetRowValues(grvList.FocusedRowIndex, new string[] { "nhaphang_id" }));
-        Response.Redirect("admin-nhap-hang-" + _id);
+        tbProduct update = db.tbProducts.Where(x => x.product_id == Convert.ToInt32(txtid.Value)).FirstOrDefault();
+        if (txtsl.Value != "")
+        {
+            update.product_soluong = Convert.ToInt32(txtsl.Value);
+        }
+        if (txtgia.Value != "")
+        {
+            update.product_price = Convert.ToInt32(txtgia.Value);
+        }
+        if (txtgiamgia.Value != "")
+        {
+            update.product_promotions = Convert.ToInt32(txtgiamgia.Value);
+        }
+        db.SubmitChanges(); loaddata();
+        alert.alert_Success(Page, "Cập nhật thành công", "");
+
     }
 }

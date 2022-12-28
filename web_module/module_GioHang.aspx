@@ -30,7 +30,7 @@
                                 <i class="far fa-star"></i>
                                 <span>(50)</span>
                             </div>--%>
-                            <a href="#" class="btn">Xoá</a>
+                            <a href="#" onclick="Xoa(<%#Eval("hdct_id") %>)" class="btn">Xoá</a>
                         </div>
 
                         <input type="text" hidden="hidden" id="txtHD_an" name="name" value="<%#Eval("hoadon_id") %>" />
@@ -41,7 +41,15 @@
         </div>
         <div style="display: none">
             <input type="text" runat="server" id="txtHD" name="name" value="" />
+            <input type="text" runat="server" id="txtXoa" name="name" value="" />
+            <a href="#" id="btnXoa" runat="server" onserverclick="btnXoa_ServerClick">content</a>
         </div>
+        <script>
+            function Xoa(id) {
+                document.getElementById("<%=txtXoa.ClientID%>").value = id;
+                document.getElementById("<%=btnXoa.ClientID%>").click();
+            }
+        </script>
     </section>
     <br />
     <br />

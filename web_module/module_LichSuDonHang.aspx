@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <link href="../css/bootstrap.min.css" rel="stylesheet" />
     <style>
-        table{
+        table {
             font-size: 30px;
         }
     </style>
@@ -11,7 +11,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <br />
     <div class="container">
-        <h3>Lịch sử mua</h3>
+        <center>
+            <h3 style="font-size: 80px">Lịch sử mua</h3>
+        </center>
         <table class="table">
             <tr>
                 <th>Ngày</th>

@@ -12,6 +12,11 @@ public partial class web_module_module_GioHang : System.Web.UI.Page
     dbcsdlDataContext db = new dbcsdlDataContext();
     protected void Page_Load(object sender, EventArgs e)
     {
+       
+        LoadData();
+    }
+    protected void LoadData()
+    {
         idkhach = (from kh in db.tbCustomerAccounts
                    where kh.customer_user == Request.Cookies["UserNameWeb"].Value
                    select kh).FirstOrDefault().customer_id;
@@ -45,6 +50,7 @@ public partial class web_module_module_GioHang : System.Web.UI.Page
                          select new
                          {
                              hd.hoadon_id,
+                             hdct.hdct_id,
                              pr.product_image,
                              pr.product_price,
                              pr.product_price_new,
@@ -53,7 +59,6 @@ public partial class web_module_module_GioHang : System.Web.UI.Page
                          };
         rpGioHang.DataSource = getGioHang;
         rpGioHang.DataBind();
-        
     }
 
     protected void btnMua_ServerClick(object sender, EventArgs e)
@@ -75,5 +80,13 @@ public partial class web_module_module_GioHang : System.Web.UI.Page
         update.hoadon_tongtien = txtTien.Value;
         db.SubmitChanges();
         Response.Redirect("/trang-chu");
+    }
+
+    protected void btnXoa_ServerClick(object sender, EventArgs e)
+    {
+        var delete = db.tbHoaDonBanHangChiTiets.Where(i => i.hdct_id == Convert.ToInt32(txtXoa.Value)).FirstOrDefault();
+        db.tbHoaDonBanHangChiTiets.DeleteOnSubmit(delete);
+        db.SubmitChanges();
+        LoadData();
     }
 }

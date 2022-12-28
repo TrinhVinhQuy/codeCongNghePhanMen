@@ -15,6 +15,7 @@ public partial class web_module_module_LichSuDonHang : System.Web.UI.Page
                        select kh).FirstOrDefault().customer_id;
         var mua = from hd in db.tbHoaDonBanHangs
                   where hd.khachhang_id == idkhach
+                  && hd.hoadon_tinhtrang != "chua"
                   select new
                   {
                       hd.hoadon_id,
